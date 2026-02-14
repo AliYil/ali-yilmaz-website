@@ -1,0 +1,76 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımda",
+    "services": "Hizmetler",
+    "portfolio": "Projeler",
+    "blog": "Blog",
+    "contact": "İletişim"
+  },
+  "hero": {
+    "greeting": "Merhaba, ben",
+    "name": "Ali Yılmaz",
+    "title": "Freelance .NET & Web Geliştirici",
+    "description": "10+ yıl deneyimle kurumsal web uygulamaları, API'ler ve SaaS çözümleri geliştiriyorum.",
+    "cta": "Benimle İletişime Geçin",
+    "portfolio": "Projelerimi İnceleyin"
+  },
+  "about": {
+    "title": "Hakkımda",
+    "subtitle": "Kimim ve ne yapıyorum?",
+    "bio": "10 yılı aşkın yazılım geliştirme deneyimine sahip, .NET ekosisteminde uzmanlaşmış bir yazılım geliştiriciyim. Kurumsal web uygulamaları, RESTful API'ler, mikroservis mimarileri ve SaaS platformları geliştirme konusunda derin bilgi ve tecrübeye sahibim.",
+    "experience": "10+ Yıl Deneyim",
+    "projects": "Başarılı Projeler",
+    "clients": "Mutlu Müşteriler",
+    "downloadCv": "CV İndir"
+  },
+  "services": {
+    "title": "Hizmetler",
+    "subtitle": "Size nasıl yardımcı olabilirim",
+    "webApps": {
+      "title": "Web Uygulama Geliştirme",
+      "description": "ASP.NET Core, Nuxt/Vue.js ile modern, ölçeklenebilir web uygulamaları geliştiriyorum."
+    },
+    "api": {
+      "title": "API Geliştirme",
+      "description": "RESTful API'ler, mikroservis mimarileri ve üçüncü parti entegrasyonlar."
+    },
+    "saas": {
+      "title": "SaaS Çözümleri",
+      "description": "Multi-tenant SaaS platformları, abonelik yönetimi ve ölçeklenebilir altyapılar."
+    },
+    "consulting": {
+      "title": "Teknik Danışmanlık",
+      "description": "Mimari tasarım, kod inceleme, performans optimizasyonu ve teknik yol haritası."
+    }
+  },
+  "portfolio": {
+    "title": "Projeler",
+    "subtitle": "Son çalışmalarımdan bazıları",
+    "viewProject": "Projeyi İncele",
+    "techStack": "Teknolojiler"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Yazılım dünyasından yazılar ve deneyimler",
+    "readMore": "Devamını Oku",
+    "comingSoon": "Yakında yeni yazılar gelecek..."
+  },
+  "contact": {
+    "title": "İletişim",
+    "subtitle": "Projeniz için benimle iletişime geçin",
+    "name": "Adınız",
+    "email": "E-posta Adresiniz",
+    "message": "Mesajınız",
+    "send": "Gönder",
+    "info": {
+      "email": "E-posta",
+      "location": "Konum",
+      "locationValue": "Türkiye"
+    }
+  },
+  "footer": {
+    "rights": "Tüm hakları saklıdır.",
+    "builtWith": "Nuxt ve ❤️ ile yapıldı."
+  }
+}
