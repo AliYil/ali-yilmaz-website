@@ -47,7 +47,7 @@
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0.002 247);
-  --muted-foreground: oklch(0.556 0 0);
+  --muted-foreground: oklch(0.45 0 0);
   --accent: oklch(0.93 0.03 250);
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
@@ -93,15 +93,16 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    scroll-behavior: smooth;
+    font-size: 110%;
+  }
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
     background-image:
-      radial-gradient(circle at 1px 1px, oklch(0.7 0.05 250 / 0.5) 1.2px, transparent 0);
-    background-size: 28px 28px;
-  }
-  html {
-    scroll-behavior: smooth;
+      radial-gradient(circle at 1px 1px, oklch(0.7 0.05 250 / 0.25) 1px, transparent 0);
+    background-size: 16px 16px;
   }
 }
 
@@ -126,6 +127,6 @@
 
 .dark body {
   background-image:
-    radial-gradient(circle at 1px 1px, oklch(0.3 0.02 250 / 0.4) 1px, transparent 0);
-  background-size: 32px 32px;
+    radial-gradient(circle at 1px 1px, oklch(0.3 0.02 250 / 0.2) 1px, transparent 0);
+  background-size: 16px 16px;
 }

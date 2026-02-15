@@ -14,6 +14,9 @@ const year = new Date().getFullYear()
           <a href="https://www.linkedin.com/in/aliyil/" target="_blank" rel="noopener" class="text-muted-foreground hover:text-foreground transition-colors">
             <Icon name="lucide:linkedin" :size="20" class="" />
           </a>
+          <a href="https://wa.me/905345909974?text=Merhaba" target="_blank" rel="noopener" class="text-muted-foreground hover:text-foreground transition-colors">
+            <Icon name="lucide:phone" :size="20" class="" />
+          </a>
           <a href="mailto:ali@aliyil.com" class="text-muted-foreground hover:text-foreground transition-colors">
             <Icon name="lucide:mail" :size="20" class="" />
           </a>

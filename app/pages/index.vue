@@ -98,7 +98,7 @@ const skills = [
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[160px] animate-glow-3" />
       </div>
 
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8 pt-20">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col lg:flex-row items-center gap-12">
           <!-- Text -->
           <div class="flex-1 text-center lg:text-left">
@@ -314,6 +314,26 @@ const skills = [
         </div>
 
         <div class="max-w-2xl mx-auto">
+          <!-- WhatsApp Primary Contact -->
+          <div class="mb-8 flex justify-center">
+            <a
+              href="https://wa.me/905345909974"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-[#E8F5E9] text-[#1B5E20] font-medium hover:bg-[#C8E6C9] transition-colors"
+            >
+              <Icon name="logos:whatsapp-icon" :size="20" />
+              {{ t('contact.whatsapp') }}
+            </a>
+          </div>
+
+          <!-- Divider -->
+          <div class="flex items-center gap-4 mb-8">
+            <div class="flex-1 h-px bg-border" />
+            <span class="text-sm text-muted-foreground">{{ t('contact.or') }}</span>
+            <div class="flex-1 h-px bg-border" />
+          </div>
+
           <div class="grid sm:grid-cols-2 gap-6 mb-8">
             <div class="flex items-center gap-3 p-4 rounded-lg border bg-card">
               <Icon name="lucide:mail" :size="20" class=" text-primary" />
@@ -332,7 +352,7 @@ const skills = [
           </div>
 
           <!-- Contact form (static - uses formspree or mailto) -->
-          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-4">
+          <form action="https://formspree.io/f/xaqdopaw" method="POST" class="space-y-4">
             <div class="grid sm:grid-cols-2 gap-4">
               <div>
                 <label class="text-sm font-medium mb-1.5 block">{{ t('contact.name') }}</label>
