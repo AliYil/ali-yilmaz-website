@@ -9,35 +9,13 @@ const services = computed(() => [
   { key: 'consulting', icon: 'lucide:lightbulb' },
 ])
 
-const projects = [
-  {
-    title: 'Telya.io',
-    description: {
-      tr: 'Küçük işletmeler için SaaS perakende yönetim platformu. Multi-tenant mimari, ürün yönetimi ve davetiye sistemi.',
-      en: 'SaaS retail management platform for small businesses. Multi-tenant architecture, product management, and invitation system.',
-    },
-    tech: ['.NET 10', 'Nuxt 4', 'PostgreSQL', 'OpenIddict'],
-    image: '/images/projects/telya.png',
-  },
-  {
-    title: 'Jewelry Vitrine',
-    description: {
-      tr: 'Kuyumcu için canlı altın fiyat takip ve vitrin uygulaması. WebSocket ile gerçek zamanlı fiyat güncellemeleri.',
-      en: 'Live gold price tracking and display app for a jewelry store. Real-time price updates via WebSocket.',
-    },
-    tech: ['Vue 3', 'Express', 'Socket.io', 'Chrome Extension'],
-    image: '/images/projects/jewelry-vitrine.png',
-  },
-  {
-    title: 'Kayra Mobilya',
-    description: {
-      tr: 'Mobilya üreticisi ve tasarımcısı için kurumsal web sitesi. TV ünitesi, mutfak/banyo dekorasyon, gardırop ve iç mimarlık danışmanlığı hizmetleri.',
-      en: 'Business website for a furniture producer and designer. TV units, kitchen/bathroom decoration, wardrobes, and interior design consultancy.',
-    },
-    tech: ['Nuxt 3', 'Tailwind CSS', 'SSG', 'Vue 3'],
-    image: '/images/projects/kayra-mobilya.png',
-  },
-]
+const { data: projects } = await useAsyncData(`projects-home-${locale.value}`, () =>
+  queryCollection('projects')
+    .where('stem', 'LIKE', `${locale.value}/projects/%`)
+    .order('order', 'ASC')
+    .limit(3)
+    .all()
+)
 
 const { data: blogPosts } = await useAsyncData(`blog-home-${locale.value}`, () =>
   queryCollection('content')
@@ -46,6 +24,29 @@ const { data: blogPosts } = await useAsyncData(`blog-home-${locale.value}`, () =
     .limit(3)
     .all()
 )
+
+// Lightbox state
+const lightboxOpen = ref(false)
+const lightboxImages = ref<string[]>([])
+const lightboxIndex = ref(0)
+
+function openLightbox(images: string[], index: number) {
+  lightboxImages.value = images
+  lightboxIndex.value = index
+  lightboxOpen.value = true
+}
+function closeLightbox() { lightboxOpen.value = false }
+function lightboxPrev() { lightboxIndex.value = (lightboxIndex.value - 1 + lightboxImages.value.length) % lightboxImages.value.length }
+function lightboxNext() { lightboxIndex.value = (lightboxIndex.value + 1) % lightboxImages.value.length }
+
+onMounted(() => {
+  window.addEventListener('keydown', (e: KeyboardEvent) => {
+    if (!lightboxOpen.value) return
+    if (e.key === 'Escape') closeLightbox()
+    if (e.key === 'ArrowLeft') lightboxPrev()
+    if (e.key === 'ArrowRight') lightboxNext()
+  })
+})
 
 const skills = [
   { name: 'C# / .NET', level: 95 },
@@ -146,8 +147,8 @@ const skills = [
               target="_blank"
               class="inline-flex items-center gap-2 rounded-lg bg-primary text-primary-foreground px-5 py-2.5 text-sm font-medium hover:bg-primary/90 transition-colors"
             >
-              <Icon name="lucide:download" :size="16" class="" />
-              {{ t('about.downloadCv') }}
+              <Icon name="lucide:file-text" :size="16" class="" />
+              {{ t('about.seeCv') }}
             </a>
           </div>
 
@@ -205,18 +206,27 @@ const skills = [
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div
             v-for="project in projects"
-            :key="project.title"
+            :key="project.id"
             class="group rounded-xl border bg-card overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
           >
-            <div class="aspect-video bg-gradient-to-br from-primary/10 to-accent/20 overflow-hidden">
-              <img :src="project.image" :alt="project.title" class="w-full h-full object-cover" />
+            <!-- Clickable image thumbnail -->
+            <div v-if="project.images?.length" class="relative aspect-video bg-gradient-to-br from-primary/10 to-accent/20 overflow-hidden cursor-pointer" @click="openLightbox(project.images, 0)">
+              <img :src="project.images[0]" :alt="project.title" class="w-full h-full object-cover" />
+              <div v-if="project.images.length > 1" class="absolute bottom-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded-full flex items-center gap-1">
+                <Icon name="lucide:images" :size="12" />
+                {{ project.images.length }}
+              </div>
             </div>
+            <div v-else class="aspect-video bg-gradient-to-br from-primary/10 to-accent/20 flex items-center justify-center">
+              <Icon name="lucide:image" :size="40" class="text-primary/30" />
+            </div>
+
             <div class="p-6">
               <h3 class="font-semibold text-lg mb-2">{{ project.title }}</h3>
               <p class="text-sm text-muted-foreground mb-4">
-                {{ $i18n.locale === 'tr' ? project.description.tr : project.description.en }}
+                {{ project.description }}
               </p>
-              <div class="flex flex-wrap gap-2">
+              <div class="flex flex-wrap gap-2 mb-4">
                 <span
                   v-for="tech in project.tech"
                   :key="tech"
@@ -225,8 +235,28 @@ const skills = [
                   {{ tech }}
                 </span>
               </div>
+              <a
+                v-if="project.link"
+                :href="project.link"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 text-sm text-primary font-medium hover:underline"
+              >
+                <Icon name="lucide:external-link" :size="14" />
+                {{ t('portfolio.viewProject') }}
+              </a>
             </div>
           </div>
+        </div>
+
+        <div class="text-center mt-10">
+          <NuxtLink
+            :to="localePath('/projects')"
+            class="inline-flex items-center gap-2 rounded-lg border border-border px-6 py-3 text-sm font-medium hover:bg-accent transition-colors"
+          >
+            {{ t('portfolio.viewAll') }}
+            <Icon name="lucide:arrow-right" :size="16" />
+          </NuxtLink>
         </div>
       </div>
     </section>
@@ -364,5 +394,34 @@ const skills = [
         </div>
       </div>
     </section>
+
+    <!-- Lightbox Modal -->
+    <Teleport to="body">
+      <Transition name="fade">
+        <div v-if="lightboxOpen" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/90" @click.self="closeLightbox">
+          <button class="absolute top-4 right-4 text-white/70 hover:text-white transition-colors z-10" @click="closeLightbox">
+            <Icon name="lucide:x" :size="28" />
+          </button>
+          <div v-if="lightboxImages.length > 1" class="absolute top-4 left-4 text-white/70 text-sm z-10">
+            {{ lightboxIndex + 1 }} / {{ lightboxImages.length }}
+          </div>
+          <button v-if="lightboxImages.length > 1" class="absolute left-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors z-10 p-2" @click="lightboxPrev">
+            <Icon name="lucide:chevron-left" :size="36" />
+          </button>
+          <img :src="lightboxImages[lightboxIndex]" :alt="`Image ${lightboxIndex + 1}`" class="max-w-[90vw] max-h-[85vh] object-contain rounded-lg" />
+          <button v-if="lightboxImages.length > 1" class="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors z-10 p-2" @click="lightboxNext">
+            <Icon name="lucide:chevron-right" :size="36" />
+          </button>
+          <div v-if="lightboxImages.length > 1" class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+            <button v-for="(_, i) in lightboxImages" :key="i" class="w-2.5 h-2.5 rounded-full transition-colors" :class="i === lightboxIndex ? 'bg-white' : 'bg-white/40 hover:bg-white/60'" @click="lightboxIndex = i" />
+          </div>
+        </div>
+      </Transition>
+    </Teleport>
   </div>
 </template>
+
+<style scoped>
+.fade-enter-active, .fade-leave-active { transition: opacity 0.2s ease; }
+.fade-enter-from, .fade-leave-to { opacity: 0; }
+</style>

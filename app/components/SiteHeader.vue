@@ -14,7 +14,7 @@ const navItems = computed(() => [
   { key: 'home', href: `${localePath('/')}#hero` },
   { key: 'about', href: `${localePath('/')}#about` },
   { key: 'services', href: `${localePath('/')}#services` },
-  { key: 'portfolio', href: `${localePath('/')}#portfolio` },
+  { key: 'portfolio', href: localePath('/projects') },
   { key: 'blog', href: localePath('/blog') },
   { key: 'contact', href: `${localePath('/')}#contact` },
 ])

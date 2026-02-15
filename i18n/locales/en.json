@@ -22,7 +22,7 @@
     "experience": "10+ Years Experience",
     "projects": "Successful Projects",
     "clients": "Happy Clients",
-    "downloadCv": "Download CV"
+    "seeCv": "See CV"
   },
   "services": {
     "title": "Services",
@@ -47,7 +47,8 @@
   "portfolio": {
     "title": "Portfolio",
     "subtitle": "Some of my recent work",
-    "viewProject": "View Project",
+    "viewProject": "Visit",
+    "viewAll": "View All Projects",
     "techStack": "Tech Stack"
   },
   "blog": {

@@ -1,0 +1,11 @@
+title: "Telya.io"
+description: "Küçük işletmeler için SaaS perakende yönetim platformu. Multi-tenant mimari, ürün yönetimi ve davetiye sistemi."
+tech:
+  - ".NET 10"
+  - "Nuxt 4"
+  - "PostgreSQL"
+  - "OpenIddict"
+images:
+  - "/images/projects/telya.png"
+link: "https://telya.io"
+order: 1

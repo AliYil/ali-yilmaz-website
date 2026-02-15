@@ -1,0 +1,11 @@
+title: "Telya.io"
+description: "SaaS retail management platform for small businesses. Multi-tenant architecture, product management, and invitation system."
+tech:
+  - ".NET 10"
+  - "Nuxt 4"
+  - "PostgreSQL"
+  - "OpenIddict"
+images:
+  - "/images/projects/telya.png"
+link: "https://telya.io"
+order: 1

@@ -114,7 +114,7 @@ pre.shiki span {
     @apply bg-background text-foreground;
     font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
     background-image:
-      radial-gradient(circle at 1px 1px, oklch(0.7 0.05 250 / 0.25) 1px, transparent 0);
+      radial-gradient(circle at 1px 1px, oklch(67.576% 0.10219 251.24 / 0.378) 1px, transparent 0);
     background-size: 16px 16px;
   }
 }
@@ -138,8 +138,16 @@ pre.shiki span {
 .animate-glow-2 { animation: glow-2 10s ease-in-out infinite; }
 .animate-glow-3 { animation: glow-3 6s ease-in-out infinite; }
 
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 .dark body {
   background-image:
-    radial-gradient(circle at 1px 1px, oklch(0.3 0.02 250 / 0.2) 1px, transparent 0);
+    radial-gradient(circle at 1px 1px, oklch(53.119% 0.0584 249.844 / 0.2) 1px, transparent 0);
   background-size: 16px 16px;
 }

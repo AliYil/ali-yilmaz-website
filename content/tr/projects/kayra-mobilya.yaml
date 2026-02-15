@@ -1,0 +1,11 @@
+title: "Kayra Mobilya"
+description: "Mobilya üreticisi ve tasarımcısı için kurumsal web sitesi. TV ünitesi, mutfak/banyo dekorasyon, gardırop ve iç mimarlık danışmanlığı hizmetleri."
+tech:
+  - "Nuxt 3"
+  - "Tailwind CSS"
+  - "SSG"
+  - "Vue 3"
+images:
+  - "/images/projects/kayra-mobilya.png"
+link: ""
+order: 3

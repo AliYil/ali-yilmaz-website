@@ -1,0 +1,11 @@
+title: "Kayra Mobilya"
+description: "Business website for a furniture producer and designer. TV units, kitchen/bathroom decoration, wardrobes, and interior design consultancy."
+tech:
+  - "Nuxt 3"
+  - "Tailwind CSS"
+  - "SSG"
+  - "Vue 3"
+images:
+  - "/images/projects/kayra-mobilya.png"
+link: ""
+order: 3

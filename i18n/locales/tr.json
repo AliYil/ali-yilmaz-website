@@ -22,7 +22,7 @@
     "experience": "10+ Yıl Deneyim",
     "projects": "Başarılı Projeler",
     "clients": "Mutlu Müşteriler",
-    "downloadCv": "CV İndir"
+    "seeCv": "CV Görüntüle"
   },
   "services": {
     "title": "Hizmetler",
@@ -47,7 +47,8 @@
   "portfolio": {
     "title": "Projeler",
     "subtitle": "Son çalışmalarımdan bazıları",
-    "viewProject": "Projeyi İncele",
+    "viewProject": "Ziyaret Et",
+    "viewAll": "Tüm Projeleri Gör",
     "techStack": "Teknolojiler"
   },
   "blog": {
