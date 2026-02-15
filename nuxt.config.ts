@@ -3,7 +3,24 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
 
-  modules: ['@nuxt/icon', 'shadcn-nuxt', '@nuxtjs/i18n'],
+  modules: ['@nuxt/icon', 'shadcn-nuxt', '@nuxtjs/i18n', '@nuxt/content', '@nuxtjs/color-mode'],
+
+  colorMode: {
+    classSuffix: '',
+  },
+
+  content: {
+    build: {
+      markdown: {
+        highlight: {
+          theme: {
+            default: 'github-light',
+            dark: 'github-dark',
+          },
+        },
+      },
+    },
+  },
 
   vite: {
     plugins: [tailwindcss()],
@@ -45,7 +62,7 @@ export default defineNuxtConfig({
 
   nitro: {
     prerender: {
-      routes: ['/', '/en'],
+      routes: ['/', '/en', '/blog', '/en/blog'],
       crawlLinks: true,
     },
   },

@@ -1,5 +1,6 @@
 <script setup lang="ts">
-const { t } = useI18n()
+const { t, locale } = useI18n()
+const localePath = useLocalePath()
 
 const services = computed(() => [
   { key: 'webApps', icon: 'lucide:monitor' },
@@ -38,44 +39,13 @@ const projects = [
   },
 ]
 
-const blogPosts = [
-  {
-    slug: 'clean-architecture-dotnet',
-    icon: 'lucide:layers',
-    date: '2026-02-10',
-    readTime: '8 min',
-    title: { tr: 'Lorem Ipsum Dolor Sit Amet', en: 'Lorem Ipsum Dolor Sit Amet' },
-    excerpt: {
-      tr: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
-      en: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
-    },
-    tags: ['.NET', 'Architecture'],
-  },
-  {
-    slug: 'nuxt-vue-performance',
-    icon: 'lucide:zap',
-    date: '2026-01-25',
-    readTime: '6 min',
-    title: { tr: 'Consectetur Adipiscing Elit', en: 'Consectetur Adipiscing Elit' },
-    excerpt: {
-      tr: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
-      en: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
-    },
-    tags: ['Vue', 'Nuxt', 'Performance'],
-  },
-  {
-    slug: 'api-design-best-practices',
-    icon: 'lucide:plug',
-    date: '2026-01-12',
-    readTime: '10 min',
-    title: { tr: 'Sed Do Eiusmod Tempor', en: 'Sed Do Eiusmod Tempor' },
-    excerpt: {
-      tr: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.',
-      en: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.',
-    },
-    tags: ['API', 'REST', '.NET'],
-  },
-]
+const { data: blogPosts } = await useAsyncData(`blog-home-${locale.value}`, () =>
+  queryCollection('content')
+    .where('path', 'LIKE', `/${locale.value}/blog/%`)
+    .order('date', 'DESC')
+    .limit(3)
+    .all()
+)
 
 const skills = [
   { name: 'C# / .NET', level: 95 },
@@ -132,7 +102,7 @@ const skills = [
           <div class="flex-shrink-0">
             <div class="w-64 h-64 lg:w-80 lg:h-80 rounded-full bg-gradient-to-br from-primary/20 to-accent/40 flex items-center justify-center border-4 border-primary/20">
               <img
-                src="/images/avatar.jpg"
+                src="/images/avatar.png"
                 alt="Ali Yılmaz"
                 class="w-56 h-56 lg:w-72 lg:h-72 rounded-full object-cover"
               />
@@ -270,13 +240,14 @@ const skills = [
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <article
+          <NuxtLink
             v-for="post in blogPosts"
-            :key="post.slug"
+            :key="post.path"
+            :to="localePath(`/blog/${post.stem?.split('/').pop()}`)"
             class="group rounded-xl border bg-card overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
           >
             <div class="aspect-[2/1] bg-gradient-to-br from-primary/10 to-accent/20 flex items-center justify-center">
-              <Icon :name="post.icon" :size="40" class=" text-primary/40" />
+              <Icon :name="post.icon || 'lucide:file-text'" :size="40" class="text-primary/40" />
             </div>
             <div class="p-6">
               <div class="flex items-center gap-2 text-xs text-muted-foreground mb-3">
@@ -285,10 +256,10 @@ const skills = [
                 <span>{{ post.readTime }}</span>
               </div>
               <h3 class="font-semibold text-lg mb-2 group-hover:text-primary transition-colors">
-                {{ $i18n.locale === 'tr' ? post.title.tr : post.title.en }}
+                {{ post.title }}
               </h3>
               <p class="text-sm text-muted-foreground line-clamp-3">
-                {{ $i18n.locale === 'tr' ? post.excerpt.tr : post.excerpt.en }}
+                {{ post.description }}
               </p>
               <div class="flex flex-wrap gap-2 mt-4">
                 <span
@@ -300,7 +271,7 @@ const skills = [
                 </span>
               </div>
             </div>
-          </article>
+          </NuxtLink>
         </div>
       </div>
     </section>
@@ -320,9 +291,9 @@ const skills = [
               href="https://wa.me/905345909974"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-[#E8F5E9] text-[#1B5E20] font-medium hover:bg-[#C8E6C9] transition-colors"
+              class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border bg-muted text-foreground font-medium hover:bg-accent transition-colors"
             >
-              <Icon name="logos:whatsapp-icon" :size="20" />
+              <WhatsAppIcon class="w-5 h-5 text-primary" />
               {{ t('contact.whatsapp') }}
             </a>
           </div>

@@ -54,7 +54,8 @@
     "title": "Blog",
     "subtitle": "Yazılım dünyasından yazılar ve deneyimler",
     "readMore": "Devamını Oku",
-    "comingSoon": "Yakında yeni yazılar gelecek..."
+    "comingSoon": "Yakında yeni yazılar gelecek...",
+    "backToList": "Tüm Yazılar"
   },
   "contact": {
     "title": "İletişim",

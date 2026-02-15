@@ -54,7 +54,8 @@
     "title": "Blog",
     "subtitle": "Articles and experiences from the software world",
     "readMore": "Read More",
-    "comingSoon": "New articles coming soon..."
+    "comingSoon": "New articles coming soon...",
+    "backToList": "All Posts"
   },
   "contact": {
     "title": "Contact",

@@ -1,17 +1,22 @@
 <script setup lang="ts">
 const { t, locale, locales, setLocale } = useI18n()
 const localePath = useLocalePath()
+const colorMode = useColorMode()
 
 const isMenuOpen = ref(false)
 const isScrolled = ref(false)
 
+function toggleColorMode() {
+  colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
+}
+
 const navItems = computed(() => [
-  { key: 'home', href: '#hero' },
-  { key: 'about', href: '#about' },
-  { key: 'services', href: '#services' },
-  { key: 'portfolio', href: '#portfolio' },
-  { key: 'blog', href: '#blog' },
-  { key: 'contact', href: '#contact' },
+  { key: 'home', href: `${localePath('/')}#hero` },
+  { key: 'about', href: `${localePath('/')}#about` },
+  { key: 'services', href: `${localePath('/')}#services` },
+  { key: 'portfolio', href: `${localePath('/')}#portfolio` },
+  { key: 'blog', href: localePath('/blog') },
+  { key: 'contact', href: `${localePath('/')}#contact` },
 ])
 
 const otherLocale = computed(() => locale.value === 'tr' ? 'en' : 'tr')
@@ -50,6 +55,13 @@ onMounted(() => {
             {{ t(`nav.${item.key}`) }}
           </a>
           <button
+            @click="toggleColorMode"
+            class="p-2 text-muted-foreground hover:text-foreground transition-colors"
+            :title="colorMode.value === 'dark' ? 'Light mode' : 'Dark mode'"
+          >
+            <Icon :name="colorMode.value === 'dark' ? 'lucide:sun' : 'lucide:moon'" :size="18" />
+          </button>
+          <button
             @click="toggleLocale"
             class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors px-2 py-1 rounded border border-border"
           >
@@ -80,6 +92,13 @@ onMounted(() => {
         >
           {{ t(`nav.${item.key}`) }}
         </a>
+        <button
+          @click="toggleColorMode"
+          class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors text-left flex items-center gap-2"
+        >
+          <Icon :name="colorMode.value === 'dark' ? 'lucide:sun' : 'lucide:moon'" :size="16" />
+          {{ colorMode.value === 'dark' ? 'Light' : 'Dark' }}
+        </button>
         <button
           @click="toggleLocale"
           class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors text-left"
