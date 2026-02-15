@@ -1,10 +1,9 @@
-title: "Kayra Mobilya"
-description: "Business website for a furniture producer and designer. TV units, kitchen/bathroom decoration, wardrobes, and interior design consultancy."
+title: "Kayra Furniture - Business Website"
+description: "Professional showcase website for a furniture manufacturer. Services, portfolio, and contact info — customers can easily find them on Google."
 tech:
-  - "Nuxt 3"
-  - "Tailwind CSS"
-  - "SSG"
-  - "Vue 3"
+  - "Website"
+  - "Mobile-Friendly"
+  - "SEO"
 images:
   - "/images/projects/kayra-mobilya.png"
 link: ""

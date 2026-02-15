@@ -3,10 +3,10 @@ const { t, locale } = useI18n()
 const localePath = useLocalePath()
 
 const services = computed(() => [
-  { key: 'webApps', icon: 'lucide:monitor' },
-  { key: 'api', icon: 'lucide:plug' },
-  { key: 'saas', icon: 'lucide:cloud' },
-  { key: 'consulting', icon: 'lucide:lightbulb' },
+  { key: 'webApps', icon: 'lucide:globe' },
+  { key: 'api', icon: 'lucide:link' },
+  { key: 'saas', icon: 'lucide:shopping-cart' },
+  { key: 'consulting', icon: 'lucide:brain' },
 ])
 
 const { data: projects } = await useAsyncData(`projects-home-${locale.value}`, () =>
@@ -54,6 +54,7 @@ const skills = [
   { name: 'Vue / Nuxt', level: 85 },
   { name: 'TypeScript', level: 85 },
   { name: 'PostgreSQL / SQL Server', level: 90 },
+  { name: 'AI Integration', level: 80 },
   { name: 'Docker / DevOps', level: 75 },
 ]
 </script>
@@ -103,7 +104,7 @@ const skills = [
           <div class="flex-shrink-0">
             <div class="w-64 h-64 lg:w-80 lg:h-80 rounded-full bg-gradient-to-br from-primary/20 to-accent/40 flex items-center justify-center border-4 border-primary/20">
               <img
-                src="/images/avatar.png"
+                src="/images/avatar.jpg"
                 alt="Ali Yılmaz"
                 class="w-56 h-56 lg:w-72 lg:h-72 rounded-full object-cover"
               />
@@ -114,7 +115,7 @@ const skills = [
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-muted/30">
+    <section id="about" class="py-20 bg-gray-400/10 dark:bg-muted/20">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
           <h2 class="text-3xl font-bold mb-3">{{ t('about.title') }}</h2>
@@ -127,18 +128,14 @@ const skills = [
               {{ t('about.bio') }}
             </p>
 
-            <div class="grid grid-cols-3 gap-4 mb-8">
+            <div class="grid grid-cols-2 gap-4 mb-8">
               <div class="text-center p-4 rounded-lg bg-card border">
                 <p class="text-2xl font-bold text-primary">10+</p>
                 <p class="text-sm text-muted-foreground">{{ t('about.experience') }}</p>
               </div>
               <div class="text-center p-4 rounded-lg bg-card border">
-                <p class="text-2xl font-bold text-primary">20+</p>
-                <p class="text-sm text-muted-foreground">{{ t('about.projects') }}</p>
-              </div>
-              <div class="text-center p-4 rounded-lg bg-card border">
                 <p class="text-2xl font-bold text-primary">15+</p>
-                <p class="text-sm text-muted-foreground">{{ t('about.clients') }}</p>
+                <p class="text-sm text-muted-foreground">{{ t('about.projects') }}</p>
               </div>
             </div>
 
@@ -183,7 +180,7 @@ const skills = [
           <div
             v-for="service in services"
             :key="service.key"
-            class="group p-6 rounded-xl border bg-card hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+            class="group p-6 rounded-xl border bg-card hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-default"
           >
             <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
               <Icon :name="service.icon" :size="24" class=" text-primary" />
@@ -196,7 +193,7 @@ const skills = [
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="py-20 bg-muted/30">
+    <section id="portfolio" class="py-20 bg-gray-400/10 dark:bg-muted/20">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
           <h2 class="text-3xl font-bold mb-3">{{ t('portfolio.title') }}</h2>
@@ -221,7 +218,7 @@ const skills = [
               <Icon name="lucide:image" :size="40" class="text-primary/30" />
             </div>
 
-            <div class="p-6">
+            <div class="p-6 cursor-default">
               <h3 class="font-semibold text-lg mb-2">{{ project.title }}</h3>
               <p class="text-sm text-muted-foreground mb-4">
                 {{ project.description }}
@@ -303,94 +300,136 @@ const skills = [
             </div>
           </NuxtLink>
         </div>
+
+        <div class="text-center mt-10">
+          <NuxtLink
+            :to="localePath('/blog')"
+            class="inline-flex items-center gap-2 rounded-lg border border-border px-6 py-3 text-sm font-medium hover:bg-accent transition-colors"
+          >
+            {{ t('blog.viewAll') }}
+            <Icon name="lucide:arrow-right" :size="16" />
+          </NuxtLink>
+        </div>
       </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-muted/30">
+    <section id="contact" class="py-20 bg-gray-400/10 dark:bg-muted/20">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
           <h2 class="text-3xl font-bold mb-3">{{ t('contact.title') }}</h2>
           <p class="text-muted-foreground text-lg">{{ t('contact.subtitle') }}</p>
         </div>
 
-        <div class="max-w-2xl mx-auto">
-          <!-- WhatsApp Primary Contact -->
-          <div class="mb-8 flex justify-center">
+        <div class="max-w-5xl mx-auto grid lg:grid-cols-2 gap-12">
+          <!-- Left Column: Form -->
+          <div>
+            <!-- Contact Info -->
+            <div class="grid sm:grid-cols-2 gap-4 mb-6">
+              <div class="flex items-center gap-3 p-4 rounded-lg border bg-card">
+                <Icon name="lucide:mail" :size="20" class="text-primary" />
+                <div>
+                  <p class="text-sm text-muted-foreground">{{ t('contact.info.email') }}</p>
+                  <a href="mailto:ali@aliyil.com" class="font-medium hover:text-primary transition-colors">ali@aliyil.com</a>
+                </div>
+              </div>
+              <div class="flex items-center gap-3 p-4 rounded-lg border bg-card">
+                <Icon name="lucide:map-pin" :size="20" class="text-primary" />
+                <div>
+                  <p class="text-sm text-muted-foreground">{{ t('contact.info.location') }}</p>
+                  <p class="font-medium">{{ t('contact.info.locationValue') }}</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact Form -->
+            <form action="https://formspree.io/f/xaqdopaw" method="POST" class="space-y-4">
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="text-sm font-medium mb-1.5 block">{{ t('contact.name') }}</label>
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    class="w-full rounded-lg border bg-background px-4 py-2.5 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
+                  />
+                </div>
+                <div>
+                  <label class="text-sm font-medium mb-1.5 block">{{ t('contact.email') }}</label>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    class="w-full rounded-lg border bg-background px-4 py-2.5 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
+                  />
+                </div>
+              </div>
+              <div>
+                <label class="text-sm font-medium mb-1.5 block">{{ t('contact.message') }}</label>
+                <textarea
+                  name="message"
+                  rows="5"
+                  required
+                  class="w-full rounded-lg border bg-background px-4 py-2.5 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all resize-none"
+                />
+              </div>
+              <button
+                type="submit"
+                class="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-primary text-primary-foreground px-6 py-3 text-sm font-medium hover:bg-primary/90 transition-colors"
+              >
+                <Icon name="lucide:send" :size="16" />
+                {{ t('contact.send') }}
+              </button>
+            </form>
+          </div>
+
+          <!-- Right Column: Social Links -->
+          <div class="flex flex-col gap-4">
+            <h3 class="text-lg font-semibold mb-2">{{ t('contact.socials') }}</h3>
             <a
               href="https://wa.me/905345909974"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border bg-muted text-foreground font-medium hover:bg-accent transition-colors"
+              class="flex items-center gap-3 px-5 py-4 rounded-lg border bg-card hover:border-primary/50 hover:text-primary transition-colors"
             >
-              <WhatsAppIcon class="w-5 h-5 text-primary" />
-              {{ t('contact.whatsapp') }}
+              <WhatsAppIcon class="w-5 h-5" />
+              <span class="font-medium">WhatsApp</span>
+            </a>
+            <a
+              href="mailto:ali@aliyil.com"
+              class="flex items-center gap-3 px-5 py-4 rounded-lg border bg-card hover:border-primary/50 hover:text-primary transition-colors"
+            >
+              <Icon name="lucide:mail" :size="20" />
+              <span class="font-medium">ali@aliyil.com</span>
+            </a>
+            <a
+              href="https://www.instagram.com/aliyil"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-3 px-5 py-4 rounded-lg border bg-card hover:border-primary/50 hover:text-primary transition-colors"
+            >
+              <Icon name="lucide:instagram" :size="20" />
+              <span class="font-medium">Instagram</span>
+            </a>
+            <a
+              href="https://github.com/AliYil"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-3 px-5 py-4 rounded-lg border bg-card hover:border-primary/50 hover:text-primary transition-colors"
+            >
+              <Icon name="lucide:github" :size="20" />
+              <span class="font-medium">GitHub</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/aliyil/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-3 px-5 py-4 rounded-lg border bg-card hover:border-primary/50 hover:text-primary transition-colors"
+            >
+              <Icon name="lucide:linkedin" :size="20" />
+              <span class="font-medium">LinkedIn</span>
             </a>
           </div>
-
-          <!-- Divider -->
-          <div class="flex items-center gap-4 mb-8">
-            <div class="flex-1 h-px bg-border" />
-            <span class="text-sm text-muted-foreground">{{ t('contact.or') }}</span>
-            <div class="flex-1 h-px bg-border" />
-          </div>
-
-          <div class="grid sm:grid-cols-2 gap-6 mb-8">
-            <div class="flex items-center gap-3 p-4 rounded-lg border bg-card">
-              <Icon name="lucide:mail" :size="20" class=" text-primary" />
-              <div>
-                <p class="text-sm text-muted-foreground">{{ t('contact.info.email') }}</p>
-                <a href="mailto:ali@aliyil.com" class="font-medium hover:text-primary transition-colors">ali@aliyil.com</a>
-              </div>
-            </div>
-            <div class="flex items-center gap-3 p-4 rounded-lg border bg-card">
-              <Icon name="lucide:map-pin" :size="20" class=" text-primary" />
-              <div>
-                <p class="text-sm text-muted-foreground">{{ t('contact.info.location') }}</p>
-                <p class="font-medium">{{ t('contact.info.locationValue') }}</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Contact form (static - uses formspree or mailto) -->
-          <form action="https://formspree.io/f/xaqdopaw" method="POST" class="space-y-4">
-            <div class="grid sm:grid-cols-2 gap-4">
-              <div>
-                <label class="text-sm font-medium mb-1.5 block">{{ t('contact.name') }}</label>
-                <input
-                  type="text"
-                  name="name"
-                  required
-                  class="w-full rounded-lg border bg-background px-4 py-2.5 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
-                />
-              </div>
-              <div>
-                <label class="text-sm font-medium mb-1.5 block">{{ t('contact.email') }}</label>
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  class="w-full rounded-lg border bg-background px-4 py-2.5 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
-                />
-              </div>
-            </div>
-            <div>
-              <label class="text-sm font-medium mb-1.5 block">{{ t('contact.message') }}</label>
-              <textarea
-                name="message"
-                rows="5"
-                required
-                class="w-full rounded-lg border bg-background px-4 py-2.5 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all resize-none"
-              />
-            </div>
-            <button
-              type="submit"
-              class="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-primary text-primary-foreground px-6 py-3 text-sm font-medium hover:bg-primary/90 transition-colors"
-            >
-              <Icon name="lucide:send" :size="16" class="" />
-              {{ t('contact.send') }}
-            </button>
-          </form>
         </div>
       </div>
     </section>

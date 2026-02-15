@@ -10,38 +10,37 @@
   "hero": {
     "greeting": "Merhaba, ben",
     "name": "Ali Yılmaz",
-    "title": "Freelance .NET & Web Geliştirici",
-    "description": "10+ yıl deneyimle kurumsal web uygulamaları, API'ler ve SaaS çözümleri geliştiriyorum.",
-    "cta": "Benimle İletişime Geçin",
-    "portfolio": "Projelerimi İnceleyin"
+    "title": "Yazılım & Yapay Zeka Çözümleri",
+    "description": "10+ yıllık yazılım geliştirme deneyimimle web sitesi, kurumsal yazılım, yapay zeka entegrasyonu ve otomasyon çözümleri sunuyorum.",
+    "cta": "Bana Ulaşın",
+    "portfolio": "Yaptığım İşleri İnceleyin"
   },
   "about": {
     "title": "Hakkımda",
     "subtitle": "Kimim ve ne yapıyorum?",
-    "bio": "10 yılı aşkın yazılım geliştirme deneyimine sahip, .NET ekosisteminde uzmanlaşmış bir yazılım geliştiriciyim. Kurumsal web uygulamaları, RESTful API'ler, mikroservis mimarileri ve SaaS platformları geliştirme konusunda derin bilgi ve tecrübeye sahibim.",
-    "experience": "10+ Yıl Deneyim",
-    "projects": "Başarılı Projeler",
-    "clients": "Mutlu Müşteriler",
+    "bio": "10 yılı aşkın yazılım geliştirme deneyimine sahibim. Kurumsal uygulamalardan küçük işletme çözümlerine, masaüstü programlardan yapay zeka entegrasyonlarına kadar geniş bir yelpazede projeler geliştiriyorum. Kuyumcudan mobilyacıya, marketten restorana her sektöre özel çözümler üretirken, aynı zamanda büyük ölçekli kurumsal projelerde de deneyim sahibiyim.",
+    "experience": "Yıllık Deneyim",
+    "projects": "Tamamlanan Proje",
     "seeCv": "CV Görüntüle"
   },
   "services": {
     "title": "Hizmetler",
     "subtitle": "Size nasıl yardımcı olabilirim?",
     "webApps": {
-      "title": "Web Uygulama Geliştirme",
-      "description": "ASP.NET Core, Nuxt/Vue.js ile modern, ölçeklenebilir web uygulamaları geliştiriyorum."
+      "title": "Web Sitesi & Web Uygulaması",
+      "description": "Profesyonel işletme web siteleri, yönetim panelleri ve modern web uygulamaları geliştiriyorum."
     },
     "api": {
-      "title": "API Geliştirme",
-      "description": "RESTful API'ler, mikroservis mimarileri ve üçüncü parti entegrasyonlar."
+      "title": "Kurumsal Yazılım & Masaüstü Uygulamalar",
+      "description": "Windows uygulamaları, konsol programları, API'ler ve sistem entegrasyonları. İşinize özel yazılım çözümleri."
     },
     "saas": {
-      "title": "SaaS Çözümleri",
-      "description": "Multi-tenant SaaS platformları, abonelik yönetimi ve ölçeklenebilir altyapılar."
+      "title": "Online Satış & İşletme Yönetimi",
+      "description": "Stok takibi, sipariş yönetimi, online mağaza — işletmenizi tek ekrandan yönetin."
     },
     "consulting": {
-      "title": "Teknik Danışmanlık",
-      "description": "Mimari tasarım, kod inceleme, performans optimizasyonu ve teknik yol haritası."
+      "title": "Yapay Zeka Entegrasyonu",
+      "description": "İşletmenize yapay zeka teknolojilerini entegre ediyorum. Otomasyon, akıllı asistanlar ve veri analizi ile verimliliğinizi artırın."
     }
   },
   "portfolio": {
@@ -49,24 +48,26 @@
     "subtitle": "Son çalışmalarımdan bazıları",
     "viewProject": "Ziyaret Et",
     "viewAll": "Tüm Projeleri Gör",
-    "techStack": "Teknolojiler"
+    "techStack": "Kullanılan Teknolojiler"
   },
   "blog": {
     "title": "Blog",
-    "subtitle": "Yazılım dünyasından yazılar ve deneyimler",
+    "subtitle": "Yazılım ve teknoloji dünyasından yazılar",
+    "viewAll": "Tüm Yazıları Gör",
     "readMore": "Devamını Oku",
     "comingSoon": "Yakında yeni yazılar gelecek...",
     "backToList": "Tüm Yazılar"
   },
   "contact": {
     "title": "İletişim",
-    "subtitle": "Projeniz için benimle iletişime geçin",
-    "whatsapp": "WhatsApp'tan iletişime geç",
+    "subtitle": "Projeniz için çözüm konuşalım",
+    "whatsapp": "WhatsApp'tan yazın",
     "or": "veya",
     "name": "Adınız",
     "email": "E-posta Adresiniz",
-    "message": "Mesajınız",
+    "message": "Projeniz hakkında kısaca bilgi verin",
     "send": "Gönder",
+    "socials": "Bana Ulaşın",
     "info": {
       "email": "E-posta",
       "location": "Konum",

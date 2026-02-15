@@ -1,10 +1,8 @@
-title: "Jewelry Vitrine"
-description: "Live gold price tracking and display app for a jewelry store. Real-time price updates via WebSocket."
+title: "Jewelry Store Price Display"
+description: "Digital display app showing live gold and currency prices in jewelry store windows. Prices update automatically — customers always see current rates."
 tech:
-  - "Vue 3"
-  - "Express"
-  - "Socket.io"
-  - "Chrome Extension"
+  - "Vue.js"
+  - "Real-time Data"
 images:
   - "/images/projects/jewelry-vitrine.png"
 link: ""

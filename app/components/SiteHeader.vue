@@ -54,13 +54,15 @@ onMounted(() => {
           >
             {{ t(`nav.${item.key}`) }}
           </a>
-          <button
-            @click="toggleColorMode"
-            class="p-2 text-muted-foreground hover:text-foreground transition-colors"
-            :title="colorMode.value === 'dark' ? 'Light mode' : 'Dark mode'"
-          >
-            <Icon :name="colorMode.value === 'dark' ? 'lucide:sun' : 'lucide:moon'" :size="18" />
-          </button>
+          <ClientOnly>
+            <button
+              @click="toggleColorMode"
+              class="p-2 text-muted-foreground hover:text-foreground transition-colors"
+              :title="colorMode.value === 'dark' ? 'Light mode' : 'Dark mode'"
+            >
+              <Icon :name="colorMode.value === 'dark' ? 'lucide:sun' : 'lucide:moon'" :size="18" />
+            </button>
+          </ClientOnly>
           <button
             @click="toggleLocale"
             class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors px-2 py-1 rounded border border-border"
@@ -69,13 +71,30 @@ onMounted(() => {
           </button>
         </nav>
 
-        <!-- Mobile menu button -->
-        <button
-          @click="isMenuOpen = !isMenuOpen"
-          class="md:hidden p-2 text-foreground"
-        >
-          <Icon :name="isMenuOpen ? 'lucide:x' : 'lucide:menu'" :size="20" class="" />
-        </button>
+        <!-- Mobile: Theme & Language (visible directly, hamburger for nav) -->
+        <div class="flex items-center gap-2 md:hidden">
+          <ClientOnly>
+            <button
+              @click="toggleColorMode"
+              class="p-2 text-foreground hover:text-primary transition-colors"
+              :title="colorMode.value === 'dark' ? 'Light mode' : 'Dark mode'"
+            >
+              <Icon :name="colorMode.value === 'dark' ? 'lucide:sun' : 'lucide:moon'" :size="18" />
+            </button>
+          </ClientOnly>
+          <button
+            @click="toggleLocale"
+            class="text-xs font-medium text-foreground hover:text-primary transition-colors px-2 py-1 rounded border border-border"
+          >
+            {{ otherLocale.toUpperCase() }}
+          </button>
+          <button
+            @click="isMenuOpen = !isMenuOpen"
+            class="p-2 text-foreground"
+          >
+            <Icon :name="isMenuOpen ? 'lucide:x' : 'lucide:menu'" :size="20" />
+          </button>
+        </div>
       </div>
 
       <!-- Mobile Nav -->
@@ -92,19 +111,6 @@ onMounted(() => {
         >
           {{ t(`nav.${item.key}`) }}
         </a>
-        <button
-          @click="toggleColorMode"
-          class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors text-left flex items-center gap-2"
-        >
-          <Icon :name="colorMode.value === 'dark' ? 'lucide:sun' : 'lucide:moon'" :size="16" />
-          {{ colorMode.value === 'dark' ? 'Light' : 'Dark' }}
-        </button>
-        <button
-          @click="toggleLocale"
-          class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors text-left"
-        >
-          🌐 {{ otherLocale.toUpperCase() }}
-        </button>
       </nav>
     </div>
   </header>

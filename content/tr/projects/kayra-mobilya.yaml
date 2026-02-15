@@ -1,10 +1,9 @@
-title: "Kayra Mobilya"
-description: "Mobilya üreticisi ve tasarımcısı için kurumsal web sitesi. TV ünitesi, mutfak/banyo dekorasyon, gardırop ve iç mimarlık danışmanlığı hizmetleri."
+title: "Kayra Mobilya - İşletme Web Sitesi"
+description: "Mobilya üreticisi için profesyonel tanıtım web sitesi. Hizmetler, projeler ve iletişim bilgileri — müşteriler Google'da kolayca bulabiliyor."
 tech:
-  - "Nuxt 3"
-  - "Tailwind CSS"
-  - "SSG"
-  - "Vue 3"
+  - "Web Sitesi"
+  - "Mobil Uyumlu"
+  - "SEO"
 images:
   - "/images/projects/kayra-mobilya.png"
 link: ""

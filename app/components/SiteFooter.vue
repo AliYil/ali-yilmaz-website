@@ -1,6 +1,5 @@
 <script setup lang="ts">
 const { t } = useI18n()
-const year = new Date().getFullYear()
 </script>
 
 <template>
@@ -14,7 +13,10 @@ const year = new Date().getFullYear()
           <a href="https://www.linkedin.com/in/aliyil/" target="_blank" rel="noopener" class="text-muted-foreground hover:text-foreground transition-colors">
             <Icon name="lucide:linkedin" :size="20" class="" />
           </a>
-          <a href="https://wa.me/905345909974?text=Merhaba" target="_blank" rel="noopener" class="text-muted-foreground hover:text-foreground transition-colors">
+          <a href="https://www.instagram.com/aliyil" target="_blank" rel="noopener" class="text-muted-foreground hover:text-foreground transition-colors">
+            <Icon name="lucide:instagram" :size="20" class="" />
+          </a>
+          <a href="https://wa.me/905345909974" target="_blank" rel="noopener" class="text-muted-foreground hover:text-foreground transition-colors">
             <Icon name="lucide:phone" :size="20" class="" />
           </a>
           <a href="mailto:ali@aliyil.com" class="text-muted-foreground hover:text-foreground transition-colors">
@@ -22,7 +24,7 @@ const year = new Date().getFullYear()
           </a>
         </div>
         <p class="text-sm text-muted-foreground">
-          © {{ year }} Ali Yılmaz. {{ t('footer.rights') }}
+          © 2026 Ali Yılmaz. {{ t('footer.rights') }}
         </p>
         <p class="text-sm text-muted-foreground">
           {{ t('footer.builtWith') }}

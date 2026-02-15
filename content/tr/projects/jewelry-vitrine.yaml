@@ -1,10 +1,8 @@
-title: "Jewelry Vitrine"
-description: "Kuyumcu için canlı altın fiyat takip ve vitrin uygulaması. WebSocket ile gerçek zamanlı fiyat güncellemeleri."
+title: "Kuyumcu Fiyat Ekranı"
+description: "Kuyumcu vitrininde anlık altın ve döviz fiyatlarını gösteren dijital ekran uygulaması. Fiyatlar otomatik güncellenir, müşterileriniz her zaman güncel fiyatı görür."
 tech:
-  - "Vue 3"
-  - "Express"
-  - "Socket.io"
-  - "Chrome Extension"
+  - "Vue.js"
+  - "Anlık Veri"
 images:
   - "/images/projects/jewelry-vitrine.png"
 link: ""

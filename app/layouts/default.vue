@@ -10,4 +10,5 @@ const { t } = useI18n()
     </main>
     <SiteFooter />
   </div>
+  <WhatsAppFloat />
 </template>

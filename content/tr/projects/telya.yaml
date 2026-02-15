@@ -1,10 +1,9 @@
-title: "Telya.io"
-description: "Küçük işletmeler için SaaS perakende yönetim platformu. Multi-tenant mimari, ürün yönetimi ve davetiye sistemi."
+title: "Telya - Market Yönetim Sistemi"
+description: "Bakkallar ve küçük marketler için stok takibi, satış yönetimi ve raporlama sistemi. Ürünlerinizi kolayca ekleyin, satışlarınızı takip edin."
 tech:
-  - ".NET 10"
-  - "Nuxt 4"
+  - ".NET"
+  - "Vue.js"
   - "PostgreSQL"
-  - "OpenIddict"
 images:
   - "/images/projects/telya.png"
 link: "https://telya.io"

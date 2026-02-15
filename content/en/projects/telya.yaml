@@ -1,10 +1,9 @@
-title: "Telya.io"
-description: "SaaS retail management platform for small businesses. Multi-tenant architecture, product management, and invitation system."
+title: "Telya - Store Management System"
+description: "Inventory tracking, sales management, and reporting for small grocery stores and markets. Easily add products, track your sales."
 tech:
-  - ".NET 10"
-  - "Nuxt 4"
+  - ".NET"
+  - "Vue.js"
   - "PostgreSQL"
-  - "OpenIddict"
 images:
   - "/images/projects/telya.png"
 link: "https://telya.io"
