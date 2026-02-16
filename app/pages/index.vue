@@ -70,7 +70,7 @@ const skills = [
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[160px] animate-glow-3" />
       </div>
 
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 pt-16 lg:pt-0">
         <div class="flex flex-col lg:flex-row items-center gap-12">
           <!-- Text -->
           <div class="flex-1 text-center lg:text-left">
