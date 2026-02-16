@@ -67,5 +67,9 @@ export default defineNuxtConfig({
     },
   },
 
+  icon: {
+    mode: 'svg',
+  },
+
   devtools: { enabled: true },
 })
