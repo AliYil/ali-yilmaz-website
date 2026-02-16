@@ -281,6 +281,8 @@ const skills = [
                 <time>{{ post.date }}</time>
                 <span>·</span>
                 <span>{{ post.readTime }}</span>
+                <span v-if="post.author">·</span>
+                <span v-if="post.author">{{ post.author }}</span>
               </div>
               <h3 class="font-semibold text-lg mb-2 group-hover:text-primary transition-colors">
                 {{ post.title }}

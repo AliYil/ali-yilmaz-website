@@ -30,6 +30,8 @@ const { data: posts } = await useAsyncData(`blog-list-${locale.value}`, () =>
             </div>
             <div class="p-6">
               <div class="flex items-center gap-2 text-xs text-muted-foreground mb-3">
+                <span v-if="post.author" class="font-medium text-foreground">{{ post.author }}</span>
+                <span v-if="post.author">·</span>
                 <time>{{ post.date }}</time>
                 <span>·</span>
                 <span>{{ post.readTime }}</span>

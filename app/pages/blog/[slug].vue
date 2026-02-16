@@ -38,6 +38,8 @@ useHead({
         <!-- Header -->
         <header class="mb-10">
           <div class="flex items-center gap-2 text-sm text-muted-foreground mb-4">
+            <span v-if="post?.author" class="font-medium text-foreground">{{ post.author }}</span>
+            <span v-if="post?.author">·</span>
             <time>{{ post?.date }}</time>
             <span>·</span>
             <span>{{ post?.readTime }}</span>
