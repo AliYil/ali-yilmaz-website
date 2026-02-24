@@ -1,22 +1,35 @@
 <script setup lang="ts">
 const { t, locale, locales, setLocale } = useI18n()
 const localePath = useLocalePath()
+const route = useRoute()
 const colorMode = useColorMode()
 
 const isMenuOpen = ref(false)
 const isScrolled = ref(false)
+
+function normalizePath(path: string) {
+  if (path !== '/' && path.endsWith('/')) return path.slice(0, -1)
+  return path
+}
+
+const homePath = computed(() => normalizePath(localePath('/')))
+const currentPath = computed(() => normalizePath(route.path))
+
+function sectionHref(id: string) {
+  return currentPath.value === homePath.value ? `#${id}` : `${homePath.value}#${id}`
+}
 
 function toggleColorMode() {
   colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
 }
 
 const navItems = computed(() => [
-  { key: 'home', href: `${localePath('/')}#hero` },
-  { key: 'about', href: `${localePath('/')}#about` },
-  { key: 'services', href: `${localePath('/')}#services` },
+  { key: 'home', href: sectionHref('hero') },
+  { key: 'about', href: sectionHref('about') },
+  { key: 'services', href: sectionHref('services') },
   { key: 'portfolio', href: localePath('/projects') },
   { key: 'blog', href: localePath('/blog') },
-  { key: 'contact', href: `${localePath('/')}#contact` },
+  { key: 'contact', href: sectionHref('contact') },
 ])
 
 const otherLocale = computed(() => locale.value === 'tr' ? 'en' : 'tr')
