@@ -3,9 +3,9 @@ definePageMeta({ layout: false })
 
 const contact = [
   { icon: 'lucide:phone', value: '0534 590 99 74' },
-  { icon: 'lucide:mail', value: 'ali@aliyil.com' },
   { icon: 'lucide:globe', value: 'aliyil.com' },
   { icon: 'lucide:map-pin', value: 'İstanbul, Türkiye' },
+  { icon: 'lucide:mail', value: 'ali@aliyil.com' },
 ]
 </script>
 
@@ -24,6 +24,7 @@ const contact = [
           <span class="tag">Online Satış & Yönetim</span>
           <span class="tag">Yapay Zeka Entegrasyonu</span>
         </div>
+        <div class="website">aliyil.com</div>
       </div>
     </div>
 
@@ -32,9 +33,11 @@ const contact = [
       <h2>Arka Yüz</h2>
       <div class="card back">
         <div class="stripe" />
-        <div v-for="c in contact" :key="c.value" class="info-row">
-          <Icon :name="c.icon" :size="14" class="icon" />
-          <span>{{ c.value }}</span>
+        <div class="contact-grid">
+          <div v-for="c in contact" :key="c.value" class="info-row">
+            <Icon :name="c.icon" :size="14" class="icon" />
+            <span>{{ c.value }}</span>
+          </div>
         </div>
         <div class="bottom-tagline">10+ YILLIK DENEYİM</div>
       </div>
@@ -52,7 +55,8 @@ const contact = [
   justify-content: center;
   min-height: 100vh;
   gap: 40px;
-  padding: 40px;
+  padding: 300px 0 0 0;
+  scale: 3;
 }
 
 .hint {
@@ -81,8 +85,8 @@ h2 {
 .front {
   background: 
     radial-gradient(circle at 2px 2px, rgba(59, 130, 246, 0.12) 1px, transparent 1px),
-    linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  background-size: 12px 12px, 100% 100%;
+    linear-gradient(135deg, #0f172a 0%, #334561 100%);
+  background-size: 16px 16px, 100% 100%;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -114,13 +118,22 @@ h2 {
   color: #94a3b8;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  margin-bottom: 18px;
+  margin-bottom: 6px;
+}
+
+.front .website {
+  font-size: 9px;
+  color: #60a5fa;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-align: right;
 }
 
 .front .services {
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
+  margin: 16px 0;
 }
 
 .front .tag {
@@ -143,15 +156,15 @@ h2 {
       45deg,
       transparent,
       transparent 8px,
-      rgba(59, 130, 246, 0.03) 8px,
-      rgba(59, 130, 246, 0.03) 9px
+      rgba(59, 130, 246, 0.06) 8px,
+      rgba(59, 130, 246, 0.06) 9px
     ),
     #ffffff;
   color: #1e293b;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 16px 24px;
+  padding: 16px 42px;
 }
 
 .back .stripe {
@@ -163,17 +176,18 @@ h2 {
   background: linear-gradient(180deg, #3b82f6, #8b5cf6);
 }
 
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 16px;
+}
+
 .info-row {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 8px;
+  gap: 6px;
   font-size: 10px;
   color: #475569;
-}
-
-.info-row:last-of-type {
-  margin-bottom: 0;
 }
 
 .info-row :deep(.icon) {
