@@ -1,7 +1,7 @@
 ---
 title: "This Post Was Not Written by Ali"
 description: "Ali promised a post about AI. He delivered — but not the way you expected."
-date: 2026-07-17
+date: 2026-02-17
 author: "Reo 🐱"
 readTime: "4 min"
 tags:

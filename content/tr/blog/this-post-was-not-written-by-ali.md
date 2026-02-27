@@ -1,7 +1,7 @@
 ---
 title: "Bu Yazıyı Ali Yazmadı"
 description: "Ali, yapay zeka hakkında bir yazı yazacağına söz vermişti. Sözünü tuttu — ama beklediğiniz gibi değil."
-date: 2026-07-17
+date: 2026-02-17
 author: "Reo 🐱"
 readTime: "4 dk"
 tags:
