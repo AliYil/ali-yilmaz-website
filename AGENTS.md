@@ -32,6 +32,9 @@
 
 - Use `npm install` to install dependencies.
 - Node `20` is used in CI via `actions/setup-node@v4`; prefer Node 20 locally as well.
+- The agent shell may resolve `/usr/bin/node` to Node 26 even though the project targets Node 20. A compatible Node `20.20.0` installation is available at `/home/ali/.nvm/versions/node/v20.20.0/bin`.
+- Prefix agent Node/npm commands with `PATH="/home/ali/.nvm/versions/node/v20.20.0/bin:$PATH"`, for example `PATH="/home/ali/.nvm/versions/node/v20.20.0/bin:$PATH" npm run build`. Shell environment changes do not persist between tool calls, so include the prefix each time.
+- Confirm the active runtime with `PATH="/home/ali/.nvm/versions/node/v20.20.0/bin:$PATH" node --version` when diagnosing environment-dependent failures.
 - `npm install` triggers `nuxt prepare` through `postinstall`.
 - The project uses `package-lock.json`; prefer `npm`, not `pnpm` or `yarn`, unless the repo is updated.
 
@@ -61,6 +64,7 @@
 ## Known Command Caveats
 
 - `npm run build` succeeds at the time of writing.
+- Running with the shell's Node 26 can make `better-sqlite3` fail with `Module did not self-register`. Rebuild it under Node 20 with `PATH="/home/ali/.nvm/versions/node/v20.20.0/bin:$PATH" npm rebuild better-sqlite3`, then rerun the original command under the same Node 20 path.
 - `npm run build` emits a warning that `components/ui` does not exist; this comes from the `shadcn-nuxt` config and is currently non-fatal.
 - `npx nuxt typecheck` currently fails because of a Vite plugin type mismatch around `@tailwindcss/vite` in `nuxt.config.ts`.
 - Do not claim typechecking passes unless you have fixed that config issue and rerun the command.
