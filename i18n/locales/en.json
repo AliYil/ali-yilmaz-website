@@ -47,6 +47,8 @@
     "title": "Portfolio",
     "subtitle": "Some of my recent work",
     "viewProject": "Visit",
+    "googlePlay": "Google Play",
+    "appStore": "App Store",
     "viewAll": "View All Projects",
     "techStack": "Technologies Used"
   },

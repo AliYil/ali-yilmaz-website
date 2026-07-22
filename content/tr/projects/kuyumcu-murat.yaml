@@ -1,0 +1,13 @@
+title: "Kuyumcu Murat - Mobil Uygulama"
+description: "İstanbul/Başakşehir'de hizmet veren Kuyumcu Murat için canlı altın ve döviz fiyatlarını anlık olarak takip etmeyi sağlayan mobil uygulama. Favoriler, altın ve döviz çevirici ile mağaza iletişim bilgilerini tek yerde sunar."
+tech:
+  - "Flutter"
+  - "iOS & Android"
+  - "Anlık Veri"
+images:
+  - "/images/projects/kuyumcu-murat/kuyumcu-murat-1.png"
+  - "/images/projects/kuyumcu-murat/kuyumcu-murat-2.png"
+  - "/images/projects/kuyumcu-murat/kuyumcu-murat-3.png"
+googlePlayLink: "https://play.google.com/store/apps/details?id=net.kuyumcumurat.mobile"
+appStoreLink: "https://apps.apple.com/tr/app/kuyumcu-murat/id6779632733"
+order: 1

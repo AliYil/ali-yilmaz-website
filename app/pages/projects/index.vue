@@ -1,7 +1,9 @@
 <script setup lang="ts">
 const { t, locale } = useI18n()
 
-const { data: projects } = await useAsyncData(`projects-list-${locale.value}`, () =>
+const projectsKey = computed(() => `projects-list-${locale.value}`)
+
+const { data: projects } = await useAsyncData(projectsKey, () =>
   queryCollection('projects')
     .where('stem', 'LIKE', `${locale.value}/projects/%`)
     .order('order', 'ASC')
@@ -90,16 +92,11 @@ onUnmounted(() => {
                 {{ tech }}
               </span>
             </div>
-            <a
-              v-if="project.link"
-              :href="project.link"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center gap-1.5 text-sm text-primary font-medium hover:underline"
-            >
-              <Icon name="lucide:external-link" :size="14" />
-              {{ t('portfolio.viewProject') }}
-            </a>
+            <ProjectLinks
+              :link="project.link"
+              :google-play-link="project.googlePlayLink"
+              :app-store-link="project.appStoreLink"
+            />
           </div>
         </div>
       </div>

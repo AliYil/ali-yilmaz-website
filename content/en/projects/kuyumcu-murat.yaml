@@ -1,0 +1,13 @@
+title: "Kuyumcu Murat - Mobile App"
+description: "A mobile app for tracking live gold and currency prices of Kuyumcu Murat - a jewelry shop located in İstanbul/Başakşehir. It brings favorites, a gold and currency converter, and store contact details together in one place."
+tech:
+  - "Flutter"
+  - "iOS & Android"
+  - "Real-time Data"
+images:
+  - "/images/projects/kuyumcu-murat/kuyumcu-murat-1.png"
+  - "/images/projects/kuyumcu-murat/kuyumcu-murat-2.png"
+  - "/images/projects/kuyumcu-murat/kuyumcu-murat-3.png"
+googlePlayLink: "https://play.google.com/store/apps/details?id=net.kuyumcumurat.mobile"
+appStoreLink: "https://apps.apple.com/tr/app/kuyumcu-murat/id6779632733"
+order: 1

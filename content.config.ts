@@ -23,6 +23,8 @@ export default defineContentConfig({
         tech: z.array(z.string()).optional(),
         images: z.array(z.string()).default([]),
         link: z.string().optional(),
+        googlePlayLink: z.string().optional(),
+        appStoreLink: z.string().optional(),
         order: z.number().default(0),
       }),
     }),
