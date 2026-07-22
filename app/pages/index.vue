@@ -103,10 +103,10 @@ const skills = [
           </div>
 
           <!-- Avatar placeholder -->
-          <div class="flex-shrink-0">
+          <div class="flex-shrink-0 lg:flex-1 lg:flex lg:justify-center">
             <div class="w-64 h-64 lg:w-80 lg:h-80 rounded-full bg-gradient-to-br from-primary/20 to-accent/40 flex items-center justify-center border-4 border-primary/20">
               <img
-                src="/images/avatar.jpg"
+                src="/images/avatar.webp"
                 alt="Ali Yılmaz"
                 class="w-56 h-56 lg:w-72 lg:h-72 rounded-full object-cover"
               />
