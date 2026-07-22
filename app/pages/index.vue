@@ -142,7 +142,7 @@ const skills = [
             </div>
 
             <a
-              href="/Ali_Abdullah_Yılmaz_CV_EN.pdf"
+              :href="`/Ali_Abdullah_Yılmaz_CV_${locale === 'tr' ? 'TR' : 'EN'}.pdf`"
               target="_blank"
               class="inline-flex items-center gap-2 rounded-lg bg-primary text-primary-foreground px-5 py-2.5 text-sm font-medium hover:bg-primary/90 transition-colors"
             >
