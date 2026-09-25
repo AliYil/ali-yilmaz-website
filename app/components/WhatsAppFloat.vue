@@ -8,36 +8,11 @@ const waLink = `https://wa.me/${phone}`
     :href="waLink"
     target="_blank"
     rel="noopener noreferrer"
-    class="wa-float"
+    class="group fixed bottom-6 right-6 z-[90] grid place-items-center w-14 h-14 rounded-full border glass text-foreground shadow-lift animate-enter transition-transform duration-500 ease-out-expo hover:scale-110"
+    style="--d: 1200ms"
     aria-label="Contact on WhatsApp"
   >
-    <WhatsAppIcon class="w-8 h-8" />
+    <span class="absolute inset-0 rounded-full border-2 border-[#25D366]/50 animate-ping-soft" />
+    <WhatsAppIcon class="w-7 h-7 transition-colors duration-300 group-hover:text-[#25D366]" />
   </a>
 </template>
-
-<style scoped>
-.wa-float {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  width: 60px;
-  height: 60px;
-  background-color: var(--muted);
-  color: var(--foreground);
-  border: 1px solid var(--border);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  z-index: 9999;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
-}
-
-.wa-float:hover {
-  transform: scale(1.1);
-  background-color: var(--accent);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-}
-
-</style>

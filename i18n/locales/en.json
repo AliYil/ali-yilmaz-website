@@ -13,7 +13,9 @@
     "title": "Software & AI Solutions",
     "description": "With 10+ years of software development experience, I build websites, enterprise software, AI integrations, and automation solutions.",
     "cta": "Contact Me",
-    "portfolio": "See My Work"
+    "portfolio": "See My Work",
+    "available": "Available for new projects",
+    "scroll": "Scroll"
   },
   "about": {
     "title": "About Me",
@@ -21,7 +23,8 @@
     "bio": "I have over 10 years of software development experience. From enterprise applications to small business solutions, desktop programs to AI integrations — I work across a wide range of projects. Whether it's a jewelry store, furniture shop, grocery store, or restaurant, I create tailored solutions for every industry, while also bringing experience from large-scale enterprise projects.",
     "experience": "Years of Experience",
     "projects": "Completed Projects",
-    "seeCv": "See CV"
+    "seeCv": "See CV",
+    "stack": "Core stack"
   },
   "services": {
     "title": "Services",

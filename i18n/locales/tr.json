@@ -13,7 +13,9 @@
     "title": "Yazılım & Yapay Zeka Çözümleri",
     "description": "10+ yıllık yazılım geliştirme deneyimimle web sitesi, kurumsal yazılım, yapay zeka entegrasyonu ve otomasyon çözümleri sunuyorum.",
     "cta": "Bana Ulaşın",
-    "portfolio": "Yaptığım İşleri İnceleyin"
+    "portfolio": "Yaptığım İşleri İnceleyin",
+    "available": "Yeni projelere açığım",
+    "scroll": "Kaydır"
   },
   "about": {
     "title": "Hakkımda",
@@ -21,7 +23,8 @@
     "bio": "10 yılı aşkın yazılım geliştirme deneyimine sahibim. Kurumsal uygulamalardan küçük işletme çözümlerine, masaüstü programlardan yapay zeka entegrasyonlarına kadar geniş bir yelpazede projeler geliştiriyorum. Kuyumcudan mobilyacıya, marketten restorana her sektöre özel çözümler üretirken, aynı zamanda büyük ölçekli kurumsal projelerde de deneyim sahibiyim.",
     "experience": "Yıllık Deneyim",
     "projects": "Tamamlanan Proje",
-    "seeCv": "CV Görüntüle"
+    "seeCv": "CV Görüntüle",
+    "stack": "Temel teknolojiler"
   },
   "services": {
     "title": "Hizmetler",

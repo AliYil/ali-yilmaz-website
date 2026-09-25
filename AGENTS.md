@@ -136,6 +136,9 @@
 - Prefer semantic Tailwind tokens like `bg-card`, `text-muted-foreground`, and `border-border` over raw arbitrary colors.
 - Keep custom colors and radii in CSS variables rather than scattering one-off values.
 - Preserve existing animation naming and patterns such as `animate-glow-1`.
+- Scroll-in animations use the `v-reveal` directive from `app/plugins/reveal.ts` (`v-reveal`, `v-reveal="150"` for a delay in ms, `v-reveal:left|right|scale` for direction). Put it on a wrapper element, not on an element that has its own hover transitions.
+- Load-time animations use `animate-enter` with a `--d` delay CSS variable; shared cards use `SpotlightCard` for the cursor glow.
+- Use Tailwind `backdrop-blur-*` utilities rather than raw `backdrop-filter` in CSS; the minifier drops the unprefixed property.
 - Use scoped styles only when utility classes are not enough.
 - Keep background, color-mode, and typography behavior consistent with the existing site.
 

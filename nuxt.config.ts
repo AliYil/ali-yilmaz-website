@@ -48,6 +48,7 @@ export default defineNuxtConfig({
   css: ['~/assets/css/tailwind.css'],
 
   app: {
+    pageTransition: { name: 'page', mode: 'out-in' },
     head: {
       title: 'Ali Yılmaz - Freelance .NET & Web Developer',
       meta: [
@@ -56,6 +57,13 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500&display=swap' },
+      ],
+      script: [
+        // Enables scroll-reveal styles only when JS is available, before first paint
+        { innerHTML: 'document.documentElement.classList.add(\'js\')' },
       ],
     },
   },

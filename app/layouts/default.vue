@@ -1,9 +1,5 @@
-<script setup lang="ts">
-const { t } = useI18n()
-</script>
-
 <template>
-  <div class="min-h-screen flex flex-col">
+  <div class="min-h-screen flex flex-col overflow-x-clip">
     <SiteHeader />
     <main class="flex-1">
       <slot />
