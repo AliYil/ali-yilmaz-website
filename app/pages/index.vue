@@ -26,7 +26,6 @@ const socials = [
 ]
 
 const nameWords = computed(() => t('hero.name').split(' '))
-const cvHref = computed(() => `/Ali_Abdullah_Yılmaz_CV_${locale.value === 'tr' ? 'TR' : 'EN'}.pdf`)
 
 const projectsKey = computed(() => `projects-home-${locale.value}`)
 
@@ -201,7 +200,7 @@ function onHeroPointerMove(e: PointerEvent) {
 
             <div v-reveal="300">
               <a
-                :href="cvHref"
+                href="/CV/INT_CV_Ali_Abdullah_Yilmaz.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="btn-shine group inline-flex items-center gap-2 rounded-full bg-foreground text-background px-6 py-3 text-sm font-medium transition-transform duration-300 hover:scale-[1.03]"
