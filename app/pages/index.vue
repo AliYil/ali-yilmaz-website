@@ -20,7 +20,6 @@ const skills = [
 ]
 
 const socials = [
-  { label: 'Instagram', icon: 'lucide:instagram', href: 'https://www.instagram.com/aliyil' },
   { label: 'GitHub', icon: 'lucide:github', href: 'https://github.com/AliYil' },
   { label: 'LinkedIn', icon: 'lucide:linkedin', href: 'https://www.linkedin.com/in/aliyil/' },
 ]
