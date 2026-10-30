@@ -5,7 +5,7 @@ date: 2026-10-29
 author: "Ali Yılmaz"
 readTime: "5 min"
 tags:
-  - business logic
+  - business-logic
   - dsl
   - bever
 icon: "lucide:briefcase-business"
