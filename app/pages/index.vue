@@ -428,8 +428,8 @@ function onHeroPointerMove(e: PointerEvent) {
         </div>
       </div>
     </section>
+    <WhatsAppFloat />
   </div>
-  <WhatsAppFloat />
 </template>
 
 <style scoped>
