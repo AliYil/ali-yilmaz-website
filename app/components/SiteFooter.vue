@@ -5,7 +5,6 @@ const localePath = useLocalePath()
 const socials = [
   { label: 'GitHub', icon: 'lucide:github', href: 'https://github.com/AliYil' },
   { label: 'LinkedIn', icon: 'lucide:linkedin', href: 'https://www.linkedin.com/in/aliyil/' },
-  { label: 'Instagram', icon: 'lucide:instagram', href: 'https://www.instagram.com/aliyil' },
   { label: 'WhatsApp', icon: 'lucide:phone', href: 'https://wa.me/905345909974' },
 ]
 

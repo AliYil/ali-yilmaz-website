@@ -1,7 +1,7 @@
 ---
 title: "The 'Business Logic' Problem"
 description: "What imperative programming, declarative programming, and a beaver have in common"
-date: 2026-10-29
+date: 2026-10-30
 author: "Ali Yılmaz"
 readTime: "5 min"
 tags:

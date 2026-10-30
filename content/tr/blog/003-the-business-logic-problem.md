@@ -1,7 +1,7 @@
 ---
 title: "'İş Mantığı' Problemi"
 description: "Buyruksal, bildirimsel ve bir kunduzun birbiriyle alakası"
-date: 2026-10-29
+date: 2026-10-30
 author: "Ali Yılmaz"
 readTime: "5 dk"
 tags: 

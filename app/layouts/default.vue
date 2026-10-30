@@ -6,5 +6,4 @@
     </main>
     <SiteFooter />
   </div>
-  <WhatsAppFloat />
 </template>

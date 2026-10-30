@@ -75,14 +75,6 @@ function onHeroPointerMove(e: PointerEvent) {
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-28 lg:pt-28">
         <div class="grid lg:grid-cols-[1.2fr_1fr] items-center gap-16 lg:gap-10">
           <div class="text-center lg:text-left">
-            <div class="animate-enter inline-flex items-center gap-2.5 rounded-full border glass px-3.5 py-1.5 text-xs font-medium shadow-soft mb-8">
-              <span class="relative flex w-2 h-2">
-                <span class="absolute inset-0 rounded-full bg-emerald-500 animate-ping-soft" />
-                <span class="relative w-2 h-2 rounded-full bg-emerald-500" />
-              </span>
-              {{ t('hero.available') }}
-            </div>
-
             <p class="animate-enter font-mono text-sm uppercase tracking-[0.2em] text-muted-foreground mb-4" style="--d: 100ms">
               {{ t('hero.greeting') }}
             </p>
@@ -437,6 +429,7 @@ function onHeroPointerMove(e: PointerEvent) {
       </div>
     </section>
   </div>
+  <WhatsAppFloat />
 </template>
 
 <style scoped>
